@@ -1,0 +1,122 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+body {
+  background: #faf9f9;
+}
+h1,
+h2,
+h3,
+p {
+  color: #555;
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: -1;
+  text-align: center;
+}
+img {
+  display: block;
+  margin: auto;
+}
+h3 {
+  font-size: 25px;
+}
+button {
+  display: block;
+  background: #2e8aa1;
+
+  border: none;
+  padding: 15px;
+  border-radius: 15px;
+  font-size: 18px;
+  width: 200px;
+  margin: auto;
+  cursor: pointer;
+  animation: 2s in-out linear infinite;
+}
+a {
+  color: #ffe;
+  text-decoration: none;
+}
+@keyframes in-out {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+div {
+  display: inline-block;
+  margin-left: 180px;
+  cursor: pointer;
+}
+a {
+  color: #555;
+  font-size: 22px;
+}
+
+.active {
+  color: #2d9e2d;
+}
+.angry {
+  color: #eb4034;
+}
+
+.glass {
+  width: 200px;
+  height: 200px;
+  background: url('glass.jpg');
+  background-size: cover;
+}
+.broken {
+  height: 200px;
+  width: 200px;
+  background: url('broken-glass.jpg');
+  background-size: cover;
+}
+
+.right {
+  width: 400px;
+  float: right;
+  margin-top: -400px;
+  margin-right: 70px;
+}
+
+.left {
+  width: 400px;
+  float: left;
+  margin-left: -100px;
+}
+
+.container {
+  margin-left: 400px;
+  width: 800px;
+  height: 590px;
+  background: #555;
+}
+.progressplayer[value]::-webkit-progress-bar {
+  background-color: #eb4034;
+}
+
+.progressplayer[value]::-webkit-progress-value {
+  background-color: #2d9e2d;
+}
+
+progress[value] {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+  appearance: none;
+}
+.enemy-container {
+  text-align: center;
+  margin: auto;
+  display: block;
+}

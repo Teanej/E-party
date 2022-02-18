@@ -1,0 +1,56 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Press Start 2P";
+}
+body {
+    color: #ffe;
+    background: #555;
+  }
+#game{
+    width: 300px;
+    height: 500px;
+    margin: auto;
+    box-sizing: border-box;
+    background: url("background.png");
+    background-size: contain;
+}
+#character{
+    width: 100px;
+    height: 100px;
+    background: url("ship.gif");
+    background-size: contain;
+    position: relative;
+    top: 300px;
+    left: 0px;
+}
+#white{
+    top: 500px;
+    z-index: 100;
+    position: absolute;
+    width: 300px;
+    height: 130px;
+    background: url("background.png");
+    background-size: cover;
+}
+#block{
+    width: 100px;
+    height: 100px;
+    top: 500px;
+    background: url("rock.png");
+    position: relative;
+    animation: slide 1s infinite linear;
+    background-size: contain;
+}
+@keyframes slide{
+    0%{top:-100px};
+    100%{top:500px};
+}
+#left, #right{
+    width:50%;
+    position: absolute;
+    height: 500px;
+}
+#right{
+    left: 50%;
+}

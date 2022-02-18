@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 18px;
+}
+
+body {
+  background: linear-gradient(rgba(73, 72, 72, 0.7), rgba(73, 72, 72, 0.7)),
+    url('background.jpg');
+  background-size: cover;
+}
+
+#join-container {
+  height: 400px;
+  width: 600px;
+  padding: 50px;
+  background: #555;
+  border-radius: 25px;
+  margin: auto;
+}
+
+input,
+button {
+  display: block;
+  font-size: 18px;
+  font-style: italic;
+  background: #ffe;
+  border-radius: 25px;
+  border: none;
+  padding: 10px;
+  width: 250px;
+  margin: auto;
+  animation: anim 2s linear infinite;
+}
+button {
+  display: inline-block;
+  background: #1483c4;
+  color: #ffe;
+  width: 100px;
+}
+#box {
+  overflow-y: scroll;
+  background: #1483c4;
+  color: #ffe;
+  border: 1.5px solid #555;
+  width: 500px;
+  height: 300px;
+  margin: auto;
+  background: url(background.png);
+  background-size: cover;
+  transform: scale(1.3);
+}
+img {
+  display: block;
+  margin: auto;
+}
+
+@keyframes anim {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+#party {
+  margin: auto;
+  width: 616px;
+  height: 442px;
+  background: url(background.png);
+}
+
+#support {
+  background: #6c8b2c;
+}
+
+#hate {
+  background: #a83535;
+}
+#message {
+  color: #555;
+  background: #ffe;
+  border: none;
+  border-radius: 25px; 
+  padding: 10px;
+  width: 250px;
+}
+#support-message {
+  color: #ffe;
+  background: #6c8b2c;
+  border: none;
+  border-radius: 25px; 
+  padding: 10px;
+  width: 250px;
+}
+#hate-message {
+  color: #ffe;
+  background: #a83535;
+  border: none;
+  border-radius: 25px; 
+  padding: 10px;
+  width: 250px;
+}
+#music-container {
+  margin-top: -600px;
+  padding: 30px;
+}
+h2 {
+  font-size: 30px;
+  color: #ffe;
+}
+#game-container button {
+  width: 250px;
+
+}
+a {
+  color: #ffe;
+  text-decoration: none;
+}
+
+#game-container {
+  margin-top: -450px;
+  margin-left: 1200px;
+}

@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Press Start 2P", cursive;
+}
+body {
+    color: #ffe;
+    background: #555;
+  }
+#game{
+    width: 400px;
+    height: 500px;
+    border: 1px solid black;
+    margin: auto;
+    overflow: hidden;
+    background: url("grass.jpg");
+    background-size: cover;
+}
+#block{
+    width: 50px;
+    height: 500px;
+    background-color: #b9b3b3;
+    position: relative;
+    left: 400px;
+    animation: block 2s infinite linear;
+}
+@keyframes block{
+    0%{left:400px}
+    100%{left:-50px}
+}
+#hole{
+    width: 50px;
+    height: 150px;
+    background: url("net.jpg");
+    background-size: cover;
+    position: relative;
+    left: 400px;
+    top: -500px;
+    animation: block 2s infinite linear;
+}
+#character{
+    width: 40px;
+    height: 40px;
+    background: url("ball.png");
+    background-size: contain;
+    position: absolute;
+    top: 100px;
+    border-radius: 50%;
+}

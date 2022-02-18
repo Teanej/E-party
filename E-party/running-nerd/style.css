@@ -1,0 +1,65 @@
+* {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: "Press Start 2P", cursive;
+}
+.game {
+  width: 700px;
+  height: 400px;
+  border: 1px solid black;
+  margin: auto;
+  background: url("background.gif");
+  background-size: contain;
+}
+#character {
+  width: 100px;
+  height: 130px;
+  background: url("character.gif") no-repeat;
+  background-size: contain;
+  position: relative;
+  top: 270px;
+}
+.animate {
+  animation: jump 0.3s linear;
+}
+@keyframes jump {
+  0% {
+    top: 270px;
+  }
+  30% {
+    top: 210px;
+  }
+  70% {
+    top: 210px;
+  }
+  100% {
+    top: 270px;
+  }
+}
+
+#block {
+  background: url("rock.png") no-repeat;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 200px;
+  left: 500px;
+  animation: block 1s infinite linear;
+}
+@keyframes block {
+  0% {
+    left: 500px;
+  }
+  100% {
+    left: -20px;
+  }
+}
+p {
+  text-align: center;
+}
+body {
+  color: #ffe;
+  background: #555;
+}

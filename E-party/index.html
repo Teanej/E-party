@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-party | Join</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <br />
+    <br />
+    <br />
+    <div id="join-container">
+      <img src="logo.png" alt="E-party Logo" />
+      <br />
+      <input type="text" placeholder="Type Your Username" id="user-username" />
+      <br>
+      <input type="text" placeholder="Name your / Join party lobby" id="lobby-input">
+      <br />
+      <center>
+
+          <button id="submit">→</button>
+        </center>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="chat" style="display: none;">
+        
+
+            <div id="box" >
+                
+            </div>
+            <input type="text"placeholder="Tag Somebody" id="tagger"><br><input type="text" placeholder="Say something cool" id="input">
+            
+            <br>
+        
+            <center>
+
+                <button id="support">Support</button>
+                <button id="hate">Hate</button>
+                
+                <audio src="party-music.wav" id="party-music"></audio>
+                <audio src="spike-walk.wav" id="party-music2"></audio>
+                <audio src="wind-dance.wav" id="party-music3"></audio>
+                <audio src="cringe-effect.wav" id="party-music4"></audio>
+            </center>
+            
+            <div id="music-container">
+                <h2>Music:</h2>
+                <br>
+                <br>
+                <button id="music">🎵 Fast Beat</button>
+                <button id="loop-music">🔄 Fast Beat</button>
+                <button id="stop">🚫 Fast Beat</button>
+                <br>
+                <br>
+                <button id="music2">🎵 Spike Walk</button>
+                <button id="loop-music2">🔄 Spike Walk</button>
+                <button id="stop2">🚫 Spike Walk</button>
+                <br>
+                <br>
+                <button id="music3">🎵 Wind Dance</button>
+                <button id="loop-music3">🔄 Wind Dance</button>
+                <button id="stop3">🚫 Wind Dance</button>
+                <br>
+                <br>
+                <button id="music4">🎵 Cringe Effect</button>
+                <button id="loop-music4">🔄 Cringe Effect</button>
+                <button id="stop4">🚫 Cringe Effect</button>
+            </div>
+            <div id="game-container">
+                <h2>Games:</h2>
+                <br>
+                <br>
+                <button><a href="fishy/join.html">Fish Game | (Squid Game Clicker Game)</a></button>
+                <br>
+                <br>
+                <button><a href="running-nerd/index.html">Running Nerd | (Just another Nerd Running and Jumping)</a></button>
+                <br>
+                <br>
+                <button><a href="space-dodge/index.html">Space Dodge | (Stupid Rocks, always in the space, can you dodge them?)</a></button>
+                <br>
+                <br>
+                <button><a href="bouncing-ball/index.html">Bouncing Ball | (Flappy Bird, but with football and a lot harder.)</a></button>
+            </div>
+            <p>On 50 Subscribers, update :)!</p>
+    </div>
+    
+    <script src=https://cdn.pubnub.com/sdk/javascript/pubnub.4.28.2.min.js></script>
+    <script>
+     document.getElementById("submit").onclick = function() {
+        
+         (function() {
+             var pubnub = new PubNub({
+                 publishKey: 'demo',
+                 subscribeKey: 'demo'
+                });
+                function $(id) {
+                    return document.getElementById(id);
+                }
+                var box = $('box'),
+                input = $('input'),
+                channel = document.getElementById("lobby-input").value
+            
+            pubnub.addListener({
+                message: function(obj) {
+                    box.innerHTML = ('' + obj.message).replace() + '<br>' + box.innerHTML
+                }
+            });
+            pubnub.subscribe({
+                channels: [channel]
+            });
+            document.getElementById("support").onclick = function() {
+                pubnub.publish({
+                        channel: channel,
+                        message:  "<div id='tag'>"+ "@" + document.getElementById("tagger").value + "</div>" + " " + "<div id='support-message'>" + document.getElementById("user-username").value + " supports your last message" + "</div>",
+                        x: (input.value = '')
+                    });
+            }
+            document.getElementById("hate").onclick = function() {
+                pubnub.publish({
+                        channel: channel,
+                        message:  "<div id='tag'>"+ "@" + document.getElementById("tagger").value + "</div>" + " " + "<div id='hate-message'>" + document.getElementById("user-username").value + " hates your last message" + "</div>",
+                        x: (input.value = '')
+                    });
+            }
+            document.getElementById("music").onclick = function() {
+                document.getElementById("party-music").play()
+            }
+            document.getElementById("loop-music").onclick = function() {
+                document.getElementById("party-music").loop = true;
+            }
+            document.getElementById("stop").onclick = function() {
+                document.getElementById("party-music").pause()
+                document.getElementById("party-music").currentTime = 0;
+
+            }
+            document.getElementById("music2").onclick = function() {
+                document.getElementById("party-music2").play()
+            }
+            document.getElementById("loop-music2").onclick = function() {
+                document.getElementById("party-music2").loop = true;
+            }
+            document.getElementById("stop2").onclick = function() {
+                document.getElementById("party-music2").pause()
+                document.getElementById("party-music2").currentTime = 0;
+
+            }
+            document.getElementById("music3").onclick = function() {
+                document.getElementById("party-music3").play()
+            }
+            document.getElementById("loop-music3").onclick = function() {
+                document.getElementById("party-music3").loop = true;
+            }
+            document.getElementById("stop3").onclick = function() {
+                document.getElementById("party-music3").pause()
+                document.getElementById("party-music3").currentTime = 0;
+
+            }
+            document.getElementById("music4").onclick = function() {
+                document.getElementById("party-music4").play()
+            }
+            document.getElementById("loop-music4").onclick = function() {
+                document.getElementById("party-music4").loop = true;
+            }
+            document.getElementById("stop4").onclick = function() {
+                document.getElementById("party-music4").pause()
+                document.getElementById("party-music4").currentTime = 0;
+
+            }
+            input.addEventListener('keyup', function(e) {
+                if ((e.keyCode || e.charCode) === 13) {
+                    pubnub.publish({
+                        channel: channel,
+                        message:  "<div id='tag'>"+ "@" + document.getElementById("tagger").value + "</div>" + " " + "<div id='message'>" + document.getElementById("user-username").value + ": " + input.value + "</div>",
+                        x: (input.value = '')
+                    });
+                }
+            });
+            
+            
+        })();
+        document.getElementById("join-container").style.display = "none";
+        document.getElementById("chat").style.display = "block";
+    }  
+    </script>
+  </body>
+</html>
